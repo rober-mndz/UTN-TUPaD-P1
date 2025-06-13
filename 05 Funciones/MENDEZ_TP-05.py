@@ -1,101 +1,151 @@
-# 1) Crear una lista con los números del 1 al 100 que sean múltiplos de 4.
-# Utilizar la función
-# range.
+# 1. Crear una función llamada imprimir_hola_mundo que imprima por
+# pantalla el mensaje: “Hola Mundo!”. Llamar a esta función desde el
+# programa principal.
 
-lista = list(range(0, 101, 4))
-print(lista)
+def imprimir_hola_mundo():
+    print("Hola Mundo!")
 
-# 2) Crear una lista con cinco elementos (colocar los elementos que más te gusten) y mostrar el
-# penúltimo. ¡Puedes hacerlo como se muestra en los videos o bien investigar cómo funciona el
-# indexing con números negativos!
+if __name__ == "__main__":
+    imprimir_hola_mundo()
 
-lista2 = [1, 2, True, False, [1, 2]]
-print(lista2[-2])
+# 2. Crear una función llamada saludar_usuario(nombre) que reciba
+# como parámetro un nombre y devuelva un saludo personalizado.
+# Por ejemplo, si se llama con saludar_usuario("Marcos"), deberá de-
+# volver: “Hola Marcos!”. Llamar a esta función desde el programa
+# principal solicitando el nombre al usuario.
 
-# 3) Crear una lista vacía, agregar tres palabras con append e imprimir la lista resultante por
-# pantalla. Pista: para crear una lista vacía debes colocar los corchetes sin nada en su interior. Por
-# ejemplo:
-# lista_vacia = []
+def saludar_usuario(nombre):
+    print(f"Hola {nombre}!")
 
-lista3 = []
-lista3.append("pepe")
-lista3.append("False")
-lista3.append("Python")
-print(lista3)
+if __name__ == "__main__":
+    user = input("Ingresa tu nombre: ")
+    saludar_usuario(user)
 
-# 4) Reemplazar el segundo y último valor de la lista “animales” con las palabras “loro” y “oso”,
-# respectivamente. Imprimir la lista resultante por pantalla. ¡Puedes hacerlo como se muestra
-# en los videos o bien investigar cómo funciona el indexing con números negativos!
+# 3. Crear una función llamada informacion_personal(nombre, apellido,
+# edad, residencia) que reciba cuatro parámetros e imprima: “Soy
+# [nombre] [apellido], tengo [edad] años y vivo en [residencia]”. Pe-
+# dir los datos al usuario y llamar a esta función con los valores in-
+# gresados.
 
-animales = ["perro", "gato", "conejo", "pez"]
-animales[1] = "loro"
-animales[-1] = "oso"
-print(animales)
+def informacion_personal(nombre, apellido, edad, residencia):
+    print(f"Soy {nombre} {apellido}, tengo {edad} y vivo en {residencia}.")
+    
+if __name__ == "__main__":
+    nombre = input("Ingrese su nombre: ")
+    apellido = input("Ingrese su apellido: ")
+    edad = input("Ingrese su edad: ")
+    residencia = input("Ingrese su residencia: ")
+    
+    informacion_personal(nombre, apellido, edad, residencia)
 
+# 4. Crear dos funciones: calcular_area_circulo(radio) que reciba el ra-
+# dio como parámetro y devuelva el área del círculo. calcular_peri-
+# metro_circulo(radio) que reciba el radio como parámetro y devuel-
+# va el perímetro del círculo. Solicitar el radio al usuario y llamar am-
+# bas funciones para mostrar los resultados.
 
-# 5) Analizar el siguiente programa y explicar con tus palabras qué es lo que realiza:
+import math 
 
-# se define una lista con 5 elementos (todos numeros enteros)
-numeros = [8, 15, 3, 22, 7]
-# se utiliza el metodo remove() para eliminar el mayor de los numeros de la lista
-# este numero se indica con la funcion max() y a la misma se le pasa 
-# como arg la lista "numeros"
-numeros.remove(max(numeros))
-# se imprime en pantalla la lista una vez modificada
-print(numeros)
+def calcular_area_circulo(radio):
+    area = math.pi * radio**2 
+    return area
 
+def calcular_perimetro_circulo(radio):
+    perimetro = 2*math.pi*radio
+    return perimetro
 
-# 6) Crear una lista con números del 10 al 30 (incluído), haciendo saltos de 5 en 5 y mostrar por
-# pantalla los dos primeros.
+if __name__ == "__main__":
+    radio = int(input("Ingrese el radio del circulo: "))
+    print(f"El area de su circulo es {calcular_area_circulo(radio)} \n y su perimetro: {calcular_perimetro_circulo(radio)}")
 
-lista4 = list(range(10,31,5))
-print(lista4[0:2])
+# 5. Crear una función llamada segundos_a_horas(segundos) que reciba
+# una cantidad de segundos como parámetro y devuelva la cantidad
+# de horas correspondientes. Solicitar al usuario los segundos y mos-
+# trar el resultado usando esta función.
 
-# 7) Reemplazar los dos valores centrales (índices 1 y 2) de la lista “autos” por dos nuevos valores
-# cualesquiera.
+def segundos_a_horas(seg):
+    horas = seg/3600
+    return horas
 
-autos = ["sedan", "polo", "suran", "gol"]
-autos[1] = "Up"
-autos[2] = "Vitara"
-print(autos)
+if __name__ == "__main__":
+    segundos = int(input("Ingrese la cantidad de segundos: "))
+    print(f"{segundos} son {segundos_a_horas(segundos)} horas")
 
-# 8) Crear una lista vacía llamada "dobles" y agregar el doble de 5, 10 y 15 usando append
-# directamente. Imprimir la lista resultante por pantalla.
+# 6. Crear una función llamada tabla_multiplicar(numero) que reciba un
+# número como parámetro y imprima la tabla de multiplicar de ese
+# número del 1 al 10. Pedir al usuario el número y llamar a la fun-
+# ción.
 
-dobles = []
+def tabla_multiplicar(numero):
+    for i in range(1, 11):
+        print(numero * i)
+        
+if __name__ == "__main__":
+    num = int(input("Ingrese un numero: "))
+    tabla_multiplicar(num)
 
-dobles.append(5*2)
-dobles.append(10*2)
-dobles.append(15*2)
-print(dobles)
+# 7. Crear una función llamada operaciones_basicas(a, b) que reciba
+# dos números como parámetros y devuelva una tupla con el resulta-
+# do de sumarlos, restarlos, multiplicarlos y dividirlos. Mostrar los re-
+# sultados de forma clara.
 
+def operaciones_basicas(a, b):
+    suma = a+b
+    resta = a-b
+    mult = a*b
+    div = a/b
+    
+    resultados = (suma, resta, mult, div)
+    return resultados
 
-# 9) Dada la lista “compras”, cuyos elementos representan los productos comprados por
-# diferentes clientes:
+if __name__ == "__main__":
+    num1 = int(input("ingrese num 1:"))
+    num2 = int(input("ingrese num 2:"))
+    resultados = operaciones_basicas(num1, num2)
+    print(f"""{num1} + {num2} = {resultados[0]} 
+          \n {num1} - {num2} = {resultados[1]}
+          \n {num1} * {num2} = {resultados[2]}
+          \n {num1} / {num2} = {resultados[3]}""")
 
-compras = [["pan", "leche"], ["arroz", "fideos", "salsa"], ["agua"]]
+# 8. Crear una función llamada calcular_imc(peso, altura) que reciba el
+# peso en kilogramos y la altura en metros, y devuelva el índice de
+# masa corporal (IMC). Solicitar al usuario los datos y llamar a la fun-
+# ción para mostrar el resultado con dos decimales.
 
-# a) Agregar "jugo" a la lista del tercer cliente usando append.
-compras[2].append("jugo")
+def calcular_imc(peso, altura):
+    imc = peso / (altura)**2
+    return imc
 
-# b) Reemplazar "fideos" por "tallarines" en la lista del segundo cliente.
-compras[1][1] = "tallarines"
+if __name__ == "__main__":
+    peso = int(input("Ingrese su peso: "))
+    altura = float(input("Ingrese su altura: "))
+    print(f"Su IMC es: {calcular_imc(peso, altura)}")
 
-# c) Eliminar "pan" de la lista del primer cliente.
-compras[0].remove("pan")
+# 9. Crear una función llamada celsius_a_fahrenheit(celsius) que reciba
+# una temperatura en grados Celsius y devuelva su equivalente en
+# Fahrenheit. Pedir al usuario la temperatura en Celsius y mostrar el
+# resultado usando la función.
 
-# d) Imprimir la lista resultante por pantalla
-print(compras)
+def celsius_a_farenheit(celsius):
+    farenheit = (celsius * 9/5) + 32
+    return farenheit
 
-# 10) Elaborar una lista anidada llamada “lista_anidada” que contenga los siguientes elementos:
-# ● Posición lista_anidada[0]: 15
-# ● Posición lista_anidada[1]: True
-# ● Posición lista_anidada[2][0]: 25.5
-# ● Posición lista_anidada[2][1]: 57.9
-# ● Posición lista_anidada[2][2]: 30.6
-# ● Posición lista_anidada[3]: False
-# Imprimir la lista resultante por pantalla.
+if __name__ == "__main__":
+    grados = int(input("Ingresa la temperatra en C°: "))
+    print(f"{grados} °C son equivalentes a {celsius_a_farenheit(grados)} °F")
 
-lista_anidada = [15, True, [25.5, 57.9, 30], False]
+# 10.Crear una función llamada calcular_promedio(a, b, c) que reciba
+# tres números como parámetros y devuelva el promedio de ellos.
+# Solicitar los números al usuario y mostrar el resultado usando esta
+# función.
 
-print(lista_anidada)
+def calcular_promedio(a, b, c):
+    promedio = (a + b + c) / 3
+    return promedio
+
+if __name__ == "__main__":
+    num1 = int(input("Ingresa num1: "))
+    num2 = int(input("Ingresa num2: "))
+    num3 = int(input("Ingresa num3: "))
+    print(f"El promedio entre: {num1}, {num2}, {num3} es: {calcular_promedio(num1, num2, num3)}")
+    
